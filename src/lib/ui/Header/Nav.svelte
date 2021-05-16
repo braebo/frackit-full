@@ -6,9 +6,9 @@
 	import { quintOut } from 'svelte/easing'
 	import navright from './navright.svg'
 	import navleft from './navleft.svg'
-	
+
 	const [send, receive] = crossfade({ duration: 750, fallback: fade, easing: quintOut })
-	
+
 	const links: string[][] = [
 		['/', 'Home',],
 		['/about', 'About',],
@@ -36,8 +36,6 @@
 		nav(in:fly|once='{{y: $first ? -50 : 0, easing: quintOut, duration: 400, opacity: 1 }}')
 
 			img(src='{navleft}')
-			//- svg(viewBox='0 0 2 3' aria-hidden='true')
-			//- 	path(d='M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z')
 
 			ul(class:expand='{$first}')
 
@@ -55,8 +53,6 @@
 							.arrow(class:fade='{$first}' in:receive out:send)
 
 			img(src='{navright}')
-			//- svg(viewBox='0 0 2 3' aria-hidden='true')
-			//- 	path(d='M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z')
 
 </template>
 
@@ -165,4 +161,3 @@
 		}
 	}
 </style>
-
