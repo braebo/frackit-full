@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Header from '$lib/Header/index.svelte'
-	import { first } from '$stores/first';
+	import Header from '$lib/ui/Header/index.svelte'
+	import { first } from '$lib/stores/first';
 	import '../app.css'
 </script>
 

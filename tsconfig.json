@@ -16,8 +16,6 @@
 		"checkJs": true,
 		"types": ["node"],
 		"paths": {
-			"$stores/*": ["src/stores/*"],
-			"$utils/*": ["src/utils/*"],
 			"$lib/*": ["src/lib/*"],
 		}
 	},

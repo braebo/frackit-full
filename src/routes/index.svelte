@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-	import Counter from '$lib/Counter/index.svelte'
-	import List from '$lib/List.svelte'
+	import Counter from '$lib/ui/Counter/index.svelte'
+	import List from '$lib/ui/List.svelte'
 </script>
 
 

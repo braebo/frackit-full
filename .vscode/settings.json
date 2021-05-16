@@ -1,15 +1,20 @@
-{
-	
+{	
+	// allow formatting .svg and .xml with prettier
+	"files.associations": {
+		"*.xml": "html",
+		"*.svg": "html",
+	},
+
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	
+
 	"editor.formatOnSave": false,
-	
+
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
-	
+
 	"workbench.iconTheme": "moxer-icons",
-	
+
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
