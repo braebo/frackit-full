@@ -1,0 +1,28 @@
+{
+	
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	
+	"editor.formatOnSave": false,
+	
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	
+	"workbench.iconTheme": "moxer-icons",
+	
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": [
+					"punctuation.definition.tag",
+					"entity.name.tag.svelte",
+					"punctuation.separator.key-value.svelte",
+					"constant.name.attribute.tag.pug"
+				],
+				"settings": {
+					"foreground": "#5a86ff36"
+				}
+			},
+		]
+	}
+}
