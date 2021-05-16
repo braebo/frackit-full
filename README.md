@@ -9,3 +9,13 @@ My personal [Sveltekit](https://kit.svelte.dev) starter template, powered by [`c
 <h5 align=center> 🚧 &nbsp; <em>work in progress</em> 🚧  </h5>
 
 </center>
+
+## TODO:
+
+- dark theme
+- actions
+- utils
+- decorators
+- page transitions
+- supabase
+- memes
