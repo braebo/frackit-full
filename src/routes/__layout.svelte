@@ -1,22 +1,17 @@
 <script lang="ts">
 	import Header from '$lib/ui/Header/index.svelte'
-	import { first } from '$lib/stores/first';
+	import Footer from '$lib/ui/Footer.svelte';
 	import '../app.css'
 </script>
 
-<template lang="pug">
 
-	svelte:head
-		link(rel="stylesheet" src="../app.css")
+<template lang="pug">
 
 	Header
 
 	main
 		slot
-
-	footer
-		p Made with 💙 by 
-			a(href="https://github.com/fractalhq") Fractal
+		Footer
 
 </template>
 
@@ -33,25 +28,5 @@
 		max-width: 1024px;
 		margin: 0 auto;
 		padding: 1rem;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-
-		justify-content: center;
-		align-items: center;
-
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
 	}
 </style>

@@ -85,8 +85,8 @@
 
 		margin: 1rem 0;
 		
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		border-top: 1px solid rgba(var(--dark-a-rgb), 0.1);
+		border-bottom: 1px solid rgba(var(--dark-a-rgb), 0.1);
 		border-radius: 5px;
 
 		animation: scale 2s ease-out playing;
@@ -102,8 +102,8 @@
 		padding: 0;
 		
 		background-color: transparent;
-		color: var(--text-color);
-		border: 1px solid var(--secondary-color);
+		color: var(--dark-a);
+		border: 1px solid var(--dark-b);
 		border-top: 0 !important;
 		border-bottom: 0 !important;
 		border-radius: 5px;
@@ -115,7 +115,7 @@
 	}
 
 	.counter button:hover {
-		border: 1px solid var(--secondary-color);
+		border: 1px solid var(--dark-b);
 	}
 	
 	.counter button:active {
@@ -131,7 +131,7 @@
 	path {
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
-		stroke: var(--text-color);
+		stroke: var(--dark-a);
 	}
 
 	.counter-viewport {
@@ -153,7 +153,7 @@
 		width: 100%;
 		height: 100%;
 		
-		color: var(--accent-color);
+		color: var(--brand-a);
 		
 		font-weight: 400;
 		font-size: 4rem;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { theme } from '$lib/theme/themer'
 	import { fly } from 'svelte/transition'
 	import { onMount } from 'svelte'
 	
@@ -19,7 +20,10 @@
 <template lang="pug">
 
 	+if('mounted')
-		.list
+		.list(
+			style="--blur:{$theme == 'light' ? 0 : 2}px"
+		)
+			
 			+each('links as [url, name], i')
 				a(
 					in:fly='{{y: 50, duration: 200 * i + 750, delay: i * 50	}}'
@@ -47,7 +51,7 @@
 		max-width: max-content;
 		margin: 0.5em 0;
 
-		color: unset;
+		color: var(--dark-a);
 		transition: 0.2s;
 
 		text-decoration: none;
@@ -59,11 +63,11 @@
 	a:hover {
 		width: max-content;
 		text-shadow:
-			1px		1px 	0 	var(--accent-color),
-			-1px	-1px 	0	var(--accent-color),
-			1px 	-1px 	0 	var(--accent-color),
-			-1px 	1px 	0 	var(--accent-color),
-			1px 	1px 	0 	var(--accent-color);
+			1px		1px 	var(--blur) 	var(--brand-a),
+			-1px	-1px 	var(--blur)		var(--brand-a),
+			1px 	-1px 	var(--blur) 	var(--brand-a),
+			-1px 	1px 	var(--blur) 	var(--brand-a),
+			1px 	1px 	var(--blur) 	var(--brand-a);
 	}
 
 	a:before, a:after {
@@ -81,14 +85,14 @@
 	}
 
 	a:before {
-		background-image: radial-gradient( transparent 0%,  transparent 20%, var(--text-color) 25%, transparent 30%);
+		background-image: radial-gradient( transparent 0%,  transparent 20%, var(--dark-a) 25%, transparent 30%);
 	}
 	a:hover:before {
-		background-image: radial-gradient( var(--accent-color) 0%, var(--accent-color) 20%, var(--text-color) 25%, transparent 30%);
+		background-image: radial-gradient( var(--brand-a) 0%, var(--brand-a) 20%, var(--dark-a) 25%, transparent 30%);
 	}
 
 	a:after {
-		background-image: radial-gradient( transparent 0%,  transparent 50%, var(--accent-color) 55%, var(--accent-color) 63%, transparent 65%);
+		background-image: radial-gradient( transparent 0%,  transparent 50%, var(--brand-a) 55%, var(--brand-a) 63%, transparent 65%);
 		opacity: 0;
 		transform: scale(0.5);
 	}

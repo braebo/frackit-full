@@ -33,7 +33,7 @@
 	--primary-color: rgba(185, 198, 210, 1);
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #00d0ff;
+	--accent-color: var(--brand-a, #00d0ff);
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -42,14 +42,15 @@
 }
 
 body {
+	transition: color 0.5s background 0.3s background-color 0.3s;
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
+	background-color: var(--light-a, --primary-color);
 	background: linear-gradient(
 		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
+		var(--light-c, --primary-color) -10%,
+		var(--light-b, --secondary-color) 10.45%,
+		var(--light-a, --tertiary-color) 41.35%
 	);
 }
 
@@ -77,7 +78,7 @@ body::before {
 
 h1,
 h2 {
-	color: var(--heading-color);
+	color: var(--dark-a, --heading-color);
 	
 	font-family: var(--font-primary);
 	letter-spacing: 1.2px;
@@ -88,7 +89,7 @@ h2 {
 p {
 	line-height: 1.5;
 	font-family: var(--font-primary);
-	color: var(--text-color);
+	color: var(--dark-a, --text-color);
 	font-weight: 200;
 	font-size: 1em;
 }
