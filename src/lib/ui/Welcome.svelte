@@ -23,12 +23,12 @@
 				/>
 			</filter>
 			<image
+				class:dark
 				id="welcome"
 				href="/svelte-welcome.png"
-				filter={dark ? 'url(#filter)' : 'hue-rotate(190deg)'}
 				width="100%"
 				height="100%"
-			/>
+				/>
 		</svg>
 	{/key}
 </div>
@@ -50,7 +50,17 @@
 		user-select: none;
 	}
 	div.dark {
+		-webkit-filter: hue-rotate(190deg) brightness(0.5) blur(0.1px);
 		filter: hue-rotate(190deg) brightness(0.5) blur(0.5px);
+	}
+	div {
+		filter: hue-rotate(190deg);
+	}
+	image {
+		filter: none
+	}
+	image.dark {
+		filter: url(#filter);
 	}
 
 </style>
