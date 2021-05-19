@@ -1,8 +1,8 @@
-// 	RGB versions allow you to specify opacity.  For example:
-// 	h1 {
-// 		color: var(--darkA)
-// 		background: rgba(var(--lightARGB), 0.5);
-// 	};
+//? 	RGB versions allow you to specify opacity.  For example:
+//* 	h1 {
+//* 		color: var(--darkA);
+//* 		background: rgba(var(--lightARGB), 0.5);  	// 50% opacity
+//* 	}
 
 const brand = {
 	brandA: '#00d0ff',
@@ -12,7 +12,7 @@ const brand = {
 	brandC: '#577590',
 	brandCRGB: '87,117,144',
 	alwaysDark: '#111111',
-}
+};
 
 export const light = {
 	...brand,
@@ -37,14 +37,14 @@ export const light = {
 
 // Dark inverts light
 export const dark = {
-    ...brand,
-    lightA: '#161B21',
-    lightB: '#1F262D',
-    lightC: '#313944',
-    lightD: '#464E5C',
-    darkA: '#F5F5F5',
-    darkB: '#D7DCE0',
-    darkC: '#7D8AA2',
+	...brand,
+	lightA: '#161B21',
+	lightB: '#1F262D',
+	lightC: '#313944',
+	lightD: '#464E5C',
+	darkA: '#F5F5F5',
+	darkB: '#D7DCE0',
+	darkC: '#7D8AA2',
 	darkD: '#677182',
 	lightARGB: '22,27,33',
 	lightBRGB: '31,38,45',
@@ -57,5 +57,5 @@ export const dark = {
 	invert: 'invert(1)', // applied with `filter: var(--invert)` to invert colors in dark mode
 };
 
-const themes = { dark, light }
-export default themes
+const themes = { dark, light };
+export default themes;

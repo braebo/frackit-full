@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Switch from '$lib/theme/Switch.svelte'
-	import logo from './svelte-logo.svg'
+	import Logo from './Logo.svelte'
 	import Nav from './Nav.svelte'
 </script>
 
@@ -11,7 +11,7 @@
 
 		.corner
 			a(href='https://kit.svelte.dev')
-				img(src='{logo}' alt='SvelteKit')
+				Logo
 
 		Nav
 
@@ -28,10 +28,6 @@
 	}
 
 	.corner {
-		display: flex;
-		width: 3em;
-		height: 3em;
-		align-items: center;
-		justify-content: center;
+		width: 2.5em;
 	}
 </style>

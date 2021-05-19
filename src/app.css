@@ -33,7 +33,7 @@
 	--primary-color: rgba(185, 198, 210, 1);
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: var(--brand-a, #00d0ff);
+	--accent-color: #00d0ff;
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -95,7 +95,7 @@ p {
 }
 
 a {
-	color: var(--accent-color);
+	color: var(--brand-a);
 	
 	font-family: var(--font-secondary);
 	text-decoration: none;

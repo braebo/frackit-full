@@ -1,9 +1,10 @@
-<script context="module" lang="ts">
+<script context="module">
 	export const prerender = true
 </script>
 
-<script lang="ts">
+<script>
 	import Counter from '$lib/ui/Counter/index.svelte'
+	import Welcome from '$lib/ui/Welcome.svelte'
 	import List from '$lib/ui/List.svelte'
 </script>
 
@@ -16,13 +17,7 @@
 	section
 		h1
 			.welcome
-				picture
-					source(srcset="svelte-welcome.webp" type="image/webp")
-					img(
-						src="svelte-welcome.png"
-						draggable="false"
-						alt="Welcome"
-					)
+				Welcome
 
 		List
 
@@ -35,7 +30,6 @@
 	section {
 		display: flex;
 		flex-direction: column;
-		flex: 1;
 
 		justify-content: center;
 		align-items: center;
@@ -58,22 +52,5 @@
 		position: relative;
 
 		width: 100%;
-	}
-
-	.welcome img {
-		position: absolute;
-
-		top: clamp(100px, 20vw, 20%);
-		right: 0;
-		left: 0;
-		
-		width: 100%;
-		max-width: 1000px;
-		
-		margin: auto;
-
-		user-select: none;
-
-		filter: hue-rotate(190deg)
 	}
 </style>

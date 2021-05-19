@@ -2,15 +2,17 @@ import localStorageStore from './localStorageStore'
 import { get } from 'svelte/store'
 import themes from './themes'
 
-export const theme = localStorageStore('theme', 'light')
+const initialTheme = globalThis.localStorage && 'theme' in localStorage
+	? localStorage.getItem('theme')
+	: 'light'
 
-const verbose = true; // Change to true to enable log() for verbose console messages.
-const log = verbose   // Colorful console.log with optional theming, i.e.:  log(`x = ${x})`, 'purple', 20, 'blue')
+export const theme = localStorageStore('theme', initialTheme);
+
+let verbose = true; 	// Change to false to disable console logs.
+const log = verbose   	// Colorful console.log with optional theming, i.e.:  log(`x = ${x})`, 'purple', 20, 'blue')
 	? (str, color = 'lightblue', font_size = 15, border = 'gray',) => console.log(`%c${str}`, `size:${font_size}px;color:${color};border:1px solid ${border};padding:5px;`)
 	: (s, c, f, b) => { };
-try {
-	if (verbose && import.meta.env.NODE_ENV == 'production') verbose = false
-} catch (error) {}
+if (verbose && import.meta.env.NODE_ENV == 'production') verbose = false;
 
 const mapTheme = (theme = themes.light) => {
 	return {
@@ -72,7 +74,7 @@ export const applySystemTheme = () => {
 function detectSystemPreference(e) {
 	log('Detected change', 'cyan', 29);
 	if (e.matches) {
-		/* system prefers darkMode */
+		//? system prefers darkMode
 		log('system prefers darkMode', 'pink');
 		applyTheme('dark');
 	} else {
@@ -81,8 +83,8 @@ function detectSystemPreference(e) {
 }
 
 export const initTheme = async () => {
-	const supports_color_scheme = window.matchMedia('(prefers-color-scheme)').media !== 'not all';
-	const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)');
+	const supports_color_scheme = globalThis.matchMedia('(prefers-color-scheme)').media !== 'not all';
+	const prefers_dark = globalThis.matchMedia('(prefers-color-scheme: dark)');
 
 	log('initTheme()', 'orange');
 
@@ -107,11 +109,11 @@ export const initTheme = async () => {
 };
 
 export const toggleTheme = () => {
-	const activeTheme = get(theme)
-	log(`toggleTheme(${activeTheme})`, 'blue')
+	const activeTheme = get(theme);
+	log(`toggleTheme(${activeTheme})`, 'blue');
 	if (activeTheme == 'light') {
 		applyTheme('dark');
 	} else if (activeTheme == 'dark') {
 		applyTheme('light');
-	}
-}
+	};
+};

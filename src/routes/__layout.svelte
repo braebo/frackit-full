@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/ui/Header/index.svelte'
-	import Footer from '$lib/ui/Footer.svelte';
+	import Footer from '$lib/ui/Footer.svelte'
 	import '../app.css'
 </script>
 
@@ -17,6 +17,9 @@
 
 
 <style>
+	:global(html, body) {
+		background-color: var(--light-a);
+	}
 	main {
 		box-sizing: border-box;
 

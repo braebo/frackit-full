@@ -13,7 +13,7 @@
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
 
-	"workbench.iconTheme": "moxer-icons",
+	"workbench.iconTheme": "material-icon-theme",
 
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [

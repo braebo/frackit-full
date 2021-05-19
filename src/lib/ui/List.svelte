@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { first } from '$lib/stores/first';
 	import { theme } from '$lib/theme/themer'
 	import { fly } from 'svelte/transition'
 	import { onMount } from 'svelte'
@@ -7,13 +8,16 @@
 	const links: link[] = [
 		["https://kit.svelte.dev", "SvelteKit"],
 		["https://www.typescriptlang.org/", "Typescript"],
+		["https://github.com/FractalHQ/frackit/blob/18e471b93796ec98dd5efb6b5d9377a378f78a2d/src/lib/theme/Switch.svelte", "Dark Mode"],
 		["https://cssnano.co/", "CSSNano"],
 		["https://mdsvex.com/", "MDSvex"],
-		["https://pugjs.org/api/getting-started.html", "Pug"]
+		["https://pugjs.org/api/getting-started.html", "Pug"],
 	]
 
 	let mounted = false
-	onMount(() => {mounted = true})
+	onMount(() => {
+		mounted = true
+	})
 </script>
 
 
@@ -26,8 +30,9 @@
 			
 			+each('links as [url, name], i')
 				a(
-					in:fly='{{y: 50, duration: 200 * i + 750, delay: i * 50	}}'
+					in:fly='{{y: 50, duration: 200 * i + 750, delay: 300 + i * 50	}}'
 					href='{url}'
+					target='_'
 				) {name}
 
 </template>
@@ -54,7 +59,7 @@
 		color: var(--dark-a);
 		transition: 0.2s;
 
-		text-decoration: none;
+		text-decoration: none !important;
 		letter-spacing: 2px;
 		font-family: var(--font-secondary);
 		font-weight: 200;
@@ -72,14 +77,15 @@
 
 	a:before, a:after {
 		content: '';
+		
 		position: absolute;
 		left: -30px;
 		bottom: 0;
 		top: 0;
 
-		width: 20px;
 		height: 20px;
 		margin: auto;
+		width: 20px;
 
 		transition: 0.3s;
 	}
