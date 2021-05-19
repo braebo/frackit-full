@@ -1,0 +1,28 @@
+{
+	"recommendations": [
+		"christian-kohler.path-intellisense",
+		"coenraads.bracket-pair-colorizer-2",
+		"github.vscode-pull-request-github",
+		"ms-vscode.vscode-typescript-next",
+		"fivethree.vscode-svelte-snippets",
+		"vincaslt.highlight-matching-tag",
+		"ardenivanov.svelte-intellisense",
+		"ziyasal.vscode-open-in-github",
+		"pflannery.vscode-versionlens",
+		"wayou.vscode-todo-highlight",
+		"alefragnani.project-manager",
+		"aaron-bond.better-comments",
+		"pivaszbs.svelte-autoimport",
+		"ms-vsliveshare.vsliveshare",
+		"pkief.material-icon-theme",
+		"wallabyjs.quokka-vscode",
+		"naumovs.color-highlight",
+		"stevencl.adddoccomments",
+		"dbaeumer.vscode-eslint",
+		"inu1255.easy-snippet",
+		"anseki.vscode-color",
+		"vsls-contrib.gistfs",
+		"mhutchie.git-graph",
+		"henoc.svgeditor",
+	]
+}
