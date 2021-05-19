@@ -46,7 +46,7 @@
 
 		margin-top: clamp(5em, 30%, 8em);
 
-		font-size: 1.75em;
+		font-size: 1.5em;
 	}
 
 	a {

@@ -35,7 +35,7 @@
 	+if('mounted')
 		nav(in:fly|once='{{y: $first ? -50 : 0, easing: quintOut, duration: 400, opacity: 1 }}')
 
-			img(src='{navleft}')
+			img.navleft(src='{navleft}')
 
 			ul(class:expand='{$first}')
 
@@ -52,7 +52,7 @@
 						+if('path === $page.path')
 							.arrow(class:fade='{$first}' in:receive out:send)
 
-			img(src='{navright}')
+			img.navright(src='{navright}')
 
 </template>
 
@@ -76,6 +76,7 @@
 
 	ul {
 		position: relative;
+		z-index: 1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -85,9 +86,10 @@
 		margin: 0;
 		
 		background: var(--background);
+		background-image: linear-gradient(to bottom, transparent 92%, #0007 102%);
 		background-size: contain;
 
-		box-shadow: 0 -2px #0005 inset;
+		/* box-shadow: 0 -2px 2px #0005 inset; */
 	}
 	.expand {
 		max-width: 0%;
@@ -159,5 +161,17 @@
 		to {
 			transform: translateY(0px);
 		}
+	}
+
+	/* safari hack because it's trash */
+	.navright, .navleft {
+		position: relative;
+		z-index: -1;
+	}
+	.navright {
+		-webkit-transform: translate3d(-1px,0,0);
+	}
+	.navleft {
+		-webkit-transform: translate3d(1px,0,0);
 	}
 </style>
