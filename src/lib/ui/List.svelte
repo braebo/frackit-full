@@ -8,7 +8,7 @@
 	const links: link[] = [
 		["https://kit.svelte.dev", "SvelteKit"],
 		["https://www.typescriptlang.org/", "Typescript"],
-		["https://github.com/FractalHQ/frackit/blob/18e471b93796ec98dd5efb6b5d9377a378f78a2d/src/lib/theme/Switch.svelte", "Dark Mode"],
+		["https://github.com/FractalHQ/frackit/blob/9b44c032bb37648519d211b47842cd7f867cce82/src/lib/theme/Switch.svelte", "Dark Mode"],
 		["https://cssnano.co/", "CSSNano"],
 		["https://mdsvex.com/", "MDSvex"],
 		["https://pugjs.org/api/getting-started.html", "Pug"],
