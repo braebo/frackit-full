@@ -1,9 +1,15 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import { onMount } from 'svelte';
 
-	let mounted = false
-	onMount(() => mounted = true)
+	let pre, copied
+	function copy() {
+		navigator.clipboard.writeText("npm init @svelte/next").then(() => {
+			copied = true
+			setTimeout(() => {
+				copied = false
+			}, 1500)
+		});
+	}
 </script>
 
 
@@ -19,10 +25,15 @@
 			a(href="https://kit.svelte.dev") SvelteKit 
 			| app. You can make your own by typing the following into your command line and following the prompts:
 
-		pre npm init svelte@next
+		.code
+			pre(on:click='{copy}') npm init svelte@next
 
+			+if('copied')
+				.copied(transition:fly='{{y: -25, opacity: 1}}') Copied 👍
+		
 		br
 		br
+
 		p
 			| This is an opinionated starter template I've assembled for myself- 
 			| It's a work in progress, and not ideal for everyone, but may be useful to some.
@@ -32,9 +43,6 @@
 			| or via my email at 
 			a(href='mailto:braden@fractal-hq.com') braden@fractal-hq.com
 			| .
-
-		+if('mounted')
-			p(id="⏳" in:fly='{{ y: 20, delay: 15000, duration: 1000 }}') What are you waiting for?  Go delete half of this stuff and get to work 🚀
 </template>
 
 
@@ -44,13 +52,30 @@
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 	}
+	.code {
+		position: relative;
+	}
 	pre {
+		position: relative;
+		background: var(--light-a);
+		
 		width: max-content;
 		margin: auto;
+		
 		border: 1px solid var(--brand-a);
 		box-shadow: 0px 2px 2px 2px #0001;
+		
+		cursor: pointer;
 	}
-	#⏳ {
-		margin-top: 5rem;
+	.copied {
+		position: absolute;
+		right: 0;
+		left: 0;
+
+		width: max-content;
+		margin: auto;
+		
+		font-family: var(--font-secondary);
+		z-index: -1;
 	}
 </style>
