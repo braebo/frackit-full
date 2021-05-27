@@ -4,38 +4,56 @@
 	import Button from '$lib/ui/Button.svelte'
 	import { fly } from 'svelte/transition'
 
-	export let title = "Modal Title"
+	export let title = "Title"
 
 	const hide = () => $showModal = false
 </script>
 
+
 <template lang="pug">
 
 	+if('$showModal')
+		
+		.container
+			.modal(use:clickOutside on:click_outside='{hide}' transition:fly!='{{y: 20}}')
 
-		.modal(use:clickOutside on:click_outside='{hide}' transition:fly!='{{y: 20}}')
+				.x-icon(on:click='{hide}')
+					svg(width="15" height="15" viewBox="0 0 64 64")
+						path#x(d="M7 7L57 57M57 7L7 57" stroke="current-color" stroke-width="13" stroke-linecap="round")
 
-			.x-icon(on:click='{hide}')
-				svg(width="15" height="15" viewBox="0 0 64 64")
-					path#x(d="M7 7L57 57M57 7L7 57" stroke="current-color" stroke-width="13" stroke-linecap="round")
+				.title
+					h1 {title}
 
-			.title
-				h1 {title}
+				.content
+					slot
+						p Modal's are pretty great!
 
-			.content
-				slot
-					p Modal's are pretty great!
+				.buttons
+					
+					Button(
+						on:click='{hide}'
+						bg='var(--dark-d)'
+						bghover='var(--warn)'
+						text='var(--light-b)'
+						texthover='var(--always-dark)') Cancel
+					
+					Button(
+						on:click='{hide}'
+						bg='var(--brand-a)'
+						text='var(--always-dark)') Confirm
 
-			.buttons
-				Button(on:click='{hide}' bg='var(--warn)' text='var(--always-dark)') Cancel
-				Button(on:click='{hide}' bg='#007bff' text='white') Confirm
-
-			.close(on:click='{hide}')
+				.close(on:click='{hide}')
 
 </template>
 
 
 <style>
+	.container {
+		position: absolute;
+		top: 15rem;
+		right: 0;
+		left: 0;
+	}
 	.modal {
 		position: relative;
 		display: flex;
@@ -58,8 +76,8 @@
 		font-size: 1em;
 	}
 	.content {
-		border-bottom: 1px solid #0001;
-		border-top: 1px solid #0001;
+		border-bottom: 1px solid rgba(var(--dark-d-rgb), 0.1);
+		border-top: 1px solid rgba(var(--dark-d-rgb), 0.1);
 		line-height: 3em;
 	}
 	.buttons {

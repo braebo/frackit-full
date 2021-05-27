@@ -84,7 +84,7 @@ p {
 	font-family: var(--font-primary);
 	color: var(--dark-a, --text-color);
 	font-weight: 200;
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 a {

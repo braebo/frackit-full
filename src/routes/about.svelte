@@ -21,9 +21,10 @@
 
 		pre npm init svelte@next
 
+		br
+		br
 		p
-			| This is a relatively simple starter template I've put together for myself- 
-			| configured to my current preferences and sprinkled with some utilities I commonly reach for. 
+			| This is an opinionated starter template I've assembled for myself- 
 			| It's a work in progress, and not ideal for everyone, but may be useful to some.
 
 		p Feel free to use it if you'd like, or reach out to me with any ideas on 
@@ -33,7 +34,7 @@
 			| .
 
 		+if('mounted')
-			p(id="⏳" in:fly='{{ y: 20, delay: 10000 }}') What are you waiting for?  Go delete half of this stuff and get to work 🚀
+			p(id="⏳" in:fly='{{ y: 20, delay: 15000, duration: 1000 }}') What are you waiting for?  Go delete half of this stuff and get to work 🚀
 </template>
 
 

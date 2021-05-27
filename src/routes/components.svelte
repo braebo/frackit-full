@@ -12,7 +12,7 @@
 		Button(on:click!='{() => $showModal = true}') Modal
 
 	Modal(title="Awesome!")
-		p Modal's are pretty great.
+		p More components coming soon!
 
 </template>
 
@@ -22,5 +22,10 @@
 		margin-top: 5em;
 		display: grid;
 		justify-content: center;
+	}
+	.todo {
+		text-align: center;
+		margin: 5rem auto;
+		font-family: var(--font-secondary)
 	}
 </style>

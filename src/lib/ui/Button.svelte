@@ -1,16 +1,30 @@
 <script>
 	export let text = 'var(--dark-a)'
+	export let texthover = 'var(--brand-a)'
 	export let display = ''
 	export let bg = 'var(--light-a)'
+	export let bghover = 'var(--light-a)'
 	export let style = ''
 </script>
 
-<button on:click style="background:{bg};color:{text};display:{display};{style}">
+<button 
+	on:click
+	style="
+		--bg:{bg};
+		--bghover:{bghover};
+		--text:{text};
+		--texthover:{texthover};
+		display:{display};
+		{style}
+	"
+>
 	<slot> Click Me </slot>
 </button>
 
 <style>
 	button {
+		background: var(--bg);
+		color: var(--text);
 		width: max-content;
 		padding: 0.5em 1em;
 		margin: 1em 0.5em;
@@ -27,6 +41,8 @@
 		transition: 0.2s
 	}
 	button:hover {
+		background: var(--bghover);
+		color: var(--texthover);
 		box-shadow: 0 4px 8px #0002;
 		transform: scale(1.05);
 	}
