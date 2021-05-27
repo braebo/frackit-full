@@ -53,6 +53,7 @@
 		margin: var(--column-margin-top) auto 0 auto;
 	}
 	.code {
+		color: var(--dark-a);
 		position: relative;
 	}
 	pre {
