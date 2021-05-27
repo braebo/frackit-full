@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Switch from '$lib/theme/Switch.svelte'
+	import Switch from '$lib/ui/ToggleTheme/index.svelte'
 	import Logo from './Logo.svelte'
 	import Nav from './Nav.svelte'
 </script>
@@ -24,7 +24,12 @@
 <style>
 	header {
 		display: flex;
+		position: relative;
 		justify-content: space-between;
+		
+		width: 100vw;
+
+		z-index: 50;
 	}
 
 	.corner {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/ui/Header/index.svelte'
+	import { showModal } from '$lib/stores/modal'
 	import Footer from '$lib/ui/Footer.svelte'
 	import '../app.css'
 </script>
@@ -7,11 +8,13 @@
 
 <template lang="pug">
 
+	.overlay(class:active='{$showModal}')
+
 	Header
 
-	main
-		slot
-		Footer
+	slot
+
+	Footer
 
 </template>
 
@@ -20,16 +23,24 @@
 	:global(html, body) {
 		background-color: var(--light-a);
 	}
-	main {
-		box-sizing: border-box;
+	.header {
+		position: absolute;
+		z-index: 50;
+	}
+	.overlay {
+		position: fixed;
+		z-index: 100;
 
-		display: flex;
-		flex-direction: column;
-		flex: 1;
+		width: 100vw;
+		height: 100vh;
 
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		padding: 1rem;
+		left: 0;
+		top: 0;
+		
+		pointer-events: none;
+	}
+	.overlay.active {
+		background: #0005;
+		pointer-events: fill;
 	}
 </style>

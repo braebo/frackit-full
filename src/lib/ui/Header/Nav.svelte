@@ -12,6 +12,7 @@
 	const links: string[][] = [
 		['/', 'Home',],
 		['/about', 'About',],
+		['/components', 'Components',],
 		['/todos', 'Todos',]
 	]
 
@@ -60,6 +61,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
+		
 		--background: var(--darkgray);
 		--size: 6px;
 	}

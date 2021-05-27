@@ -1,9 +1,10 @@
 <script>
-	import { toggleTheme, initTheme } from './themer'
+	import { toggleTheme, initTheme } from '$lib/theme/utils'
 	import { fly } from 'svelte/transition'
 	import SunMoon from './SunMoon.svelte'
+	import { onMount } from 'svelte'
 
-	initTheme()
+	onMount(() => initTheme())
 </script>
 
 

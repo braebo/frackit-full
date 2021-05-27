@@ -1,6 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition'
-	import { theme } from './themer'
+	import { theme } from '$lib/theme'
 </script>
 
 <template lang="pug">

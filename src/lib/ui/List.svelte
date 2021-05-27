@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { first } from '$lib/stores/first';
-	import { theme } from '$lib/theme/themer'
+	import { first } from '$lib/stores/first'
 	import { fly } from 'svelte/transition'
+	import { theme } from '$lib/theme'
 	import { onMount } from 'svelte'
 	
 	type link = [url: string, name:string]
@@ -11,7 +11,7 @@
 		["https://github.com/FractalHQ/frackit/blob/9b44c032bb37648519d211b47842cd7f867cce82/src/lib/theme/Switch.svelte", "Dark Mode"],
 		["https://cssnano.co/", "CSSNano"],
 		["https://mdsvex.com/", "MDSvex"],
-		["https://pugjs.org/api/getting-started.html", "Pug"],
+		["https://pugjs.org/api/getting-started.html", "Pug"]
 	]
 
 	let mounted = false

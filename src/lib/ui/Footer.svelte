@@ -11,7 +11,7 @@
 	+if('mounted')
 		.footer(in:fly='{{y: 10, delay: 1500, duration: 750 }}')
 
-			p Made with 💙 by 
+			p Made with 💙 &nbsp; by 
 				a(href='https://github.com/fractalhq') Fractal
 
 			a(href='https://github.com/fractalhq/frackit' in:scale='{{ delay: 1750 }}')
@@ -34,15 +34,16 @@
 
 	footer a {
 		font-weight: bold;
+		position: relative;
 	}
-	footer img {
-		height: 2em;
+	svg {
 		transition: 0.3s;
+		transform: scale(1) translateY(-8px);
 		color: var(--dark-a);
 		fill: var(--dark-a);
 	}
 
-	.corner:hover img {
-		transform: scale(1.2);
+	svg:hover {
+		transform: scale(1.2) translateY(-8px);
 	}
 </style>

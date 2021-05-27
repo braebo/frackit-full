@@ -29,10 +29,13 @@
 <style>
 	section {
 		display: flex;
+		position: relative;
 		flex-direction: column;
 
 		justify-content: center;
 		align-items: center;
+		
+		z-index: 1;
 	}
 
 	h1 {

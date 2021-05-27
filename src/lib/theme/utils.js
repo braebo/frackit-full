@@ -1,18 +1,14 @@
-import localStorageStore from './localStorageStore'
 import { get } from 'svelte/store'
 import themes from './themes'
+import theme from './index'
 
-const initialTheme = globalThis.localStorage && 'theme' in localStorage
-	? localStorage.getItem('theme')
-	: 'light'
-
-export const theme = localStorageStore('theme', initialTheme);
-
-let verbose = true; 	// Change to false to disable console logs.
+let verbose = false; 	// Change to true to enable console logs.
 const log = verbose   	// Colorful console.log with optional theming, i.e.:  log(`x = ${x})`, 'purple', 20, 'blue')
 	? (str, color = 'lightblue', font_size = 15, border = 'gray',) => console.log(`%c${str}`, `size:${font_size}px;color:${color};border:1px solid ${border};padding:5px;`)
 	: (s, c, f, b) => { };
 if (verbose && import.meta.env.NODE_ENV == 'production') verbose = false;
+
+const client = typeof window !== "undefined";
 
 const mapTheme = (theme = themes.light) => {
 	return {
@@ -63,10 +59,10 @@ export const applyTheme = (activeTheme = 'light') => {
 	}
 };
 
+const supports_color_scheme = client && window.matchMedia('(prefers-color-scheme)').media !== 'not all';
+const prefers_dark = client && window.matchMedia('(prefers-color-scheme: dark)');
+
 export const applySystemTheme = () => {
-	const supports_color_scheme = window.matchMedia('(prefers-color-scheme)').media !== 'not all';
-	const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)');
-	
 	log('applySystemTheme()', 'coral');
 	supports_color_scheme && prefers_dark.matches ? applyTheme('dark') : applyTheme('light');
 };
@@ -74,7 +70,6 @@ export const applySystemTheme = () => {
 function detectSystemPreference(e) {
 	log('Detected change', 'cyan', 29);
 	if (e.matches) {
-		//? system prefers darkMode
 		log('system prefers darkMode', 'pink');
 		applyTheme('dark');
 	} else {
@@ -83,9 +78,6 @@ function detectSystemPreference(e) {
 }
 
 export const initTheme = async () => {
-	const supports_color_scheme = globalThis.matchMedia('(prefers-color-scheme)').media !== 'not all';
-	const prefers_dark = globalThis.matchMedia('(prefers-color-scheme: dark)');
-
 	log('initTheme()', 'orange');
 
 	if (supports_color_scheme) prefers_dark.addEventListener('change', detectSystemPreference);

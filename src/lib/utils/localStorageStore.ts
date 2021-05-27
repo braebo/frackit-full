@@ -3,14 +3,14 @@ import { writable } from 'svelte/store';
 const client = typeof window !== "undefined";
 
 const asyncLocalStorage = {
-	setItem: function (key, value) {
+	setItem: async function (key: string, value: string | object): Promise<void> {
 		return Promise.resolve().then(function () {
 			typeof value != 'string'
 				? localStorage.setItem(key, JSON.stringify(value))
 				: localStorage.setItem(key, value);
 		});
 	},
-	getItem: function (key) {
+	getItem: async function (key: string): Promise<JSON> {
 		return Promise.resolve().then(function () {
 			let value = localStorage.getItem(key);
 			return typeof value != 'string'
@@ -21,7 +21,7 @@ const asyncLocalStorage = {
 };
 
 // Adapted from https://svelte.dev/repl/7b4d6b448f8c4ed2b3d5a3c31260be2a?version=3.34.0
-const localStorageStore = (key, value) => {
+const localStorageStore = (key: string, value: any) => {
 	const { set: setStore, ...readableStore } = writable(value, () => {
 		if (!client) return;
 
@@ -35,7 +35,7 @@ const localStorageStore = (key, value) => {
 	});
 
 	// Set both localStorage and this Svelte store
-	const set = async (value) => {
+	const set = async (value: any) => {
 		setStore(value);
 		try {
 			await asyncLocalStorage.setItem(key, value);
