@@ -29,15 +29,17 @@
 	}
 	.overlay {
 		position: fixed;
-		z-index: 100;
-
-		width: 100vw;
-		height: 100vh;
-
 		left: 0;
 		top: 0;
 		
+		width: 100vw;
+		height: 100vh;
+
+		background: #0000;
+		transition: background 0.25s;
+
 		pointer-events: none;
+		z-index: 100;
 	}
 	.overlay.active {
 		background: #0005;
