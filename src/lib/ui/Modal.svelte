@@ -17,18 +17,18 @@
 
 			.x-icon(on:click='{hide}')
 				svg(width="15" height="15" viewBox="0 0 64 64")
-					path(d="M7 7L57 57M57 7L7 57" stroke="#bbb" stroke-width="13" stroke-linecap="round")
+					path#x(d="M7 7L57 57M57 7L7 57" stroke="current-color" stroke-width="13" stroke-linecap="round")
 
 			.title
 				h1 {title}
 
 			.content
-				slot(name="content")
+				slot
 					p Modal's are pretty great!
 
 			.buttons
-				Button(on:click='{hide}' bg='gray' color='white') Close
-				Button(on:click='{hide}' bg='#007bff' color='white') Confirm
+				Button(on:click='{hide}' bg='var(--warn)' text='var(--always-dark)') Cancel
+				Button(on:click='{hide}' bg='#007bff' text='white') Confirm
 
 			.close(on:click='{hide}')
 
@@ -74,5 +74,15 @@
 		right: 0;
 		padding: 0.75em;
 		cursor: pointer;
+		
+		transition: transform 0.5s;
+	}
+	#x {
+		stroke: #bbb;
+
+		transition: stroke 0.25s;
+	}
+	.x-icon:hover #x {
+		stroke: var(--warn);
 	}
 </style>

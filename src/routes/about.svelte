@@ -46,7 +46,7 @@
 	pre {
 		width: max-content;
 		margin: auto;
-		border: 1px solid var(--accent-color);
+		border: 1px solid var(--brand-a);
 		box-shadow: 0px 2px 2px 2px #0001;
 	}
 	#⏳ {

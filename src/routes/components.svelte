@@ -11,7 +11,8 @@
 
 		Button(on:click!='{() => $showModal = true}') Modal
 
-		Modal
+	Modal(title="Awesome!")
+		p Modal's are pretty great.
 
 </template>
 

@@ -62,7 +62,7 @@
 		display: flex;
 		justify-content: center;
 		
-		--background: var(--darkgray);
+		--background: #3D3D3D;
 		--size: 6px;
 	}
 
@@ -125,7 +125,7 @@
 		width: 0;
 
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+		border-top: var(--size) solid var(--brand-a);
 	}
 
 	nav a {
@@ -147,7 +147,7 @@
 	}
 
 	a:hover {
-		color: var(--accent-color);
+		color: var(--brand-a);
 	}
 
 	.fade {

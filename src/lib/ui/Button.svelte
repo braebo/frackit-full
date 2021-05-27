@@ -17,7 +17,7 @@
 
 		border: none;
 		border-radius: 5px;
-		box-shadow: 0 2px 4px #0001;
+		box-shadow: 0 2px 4px #0002;
 
 		font-family: var(--font-primary);
 
@@ -27,10 +27,13 @@
 		transition: 0.2s
 	}
 	button:hover {
-		box-shadow: 0 4px 8px #0001;
+		box-shadow: 0 4px 8px #0002;
 		transform: scale(1.05);
 	}
 	button:focus, button:active {
         box-shadow: 0 0 1.5px 1px var(--brand-a);
+	}
+	p {
+		height: 50%;
 	}
 </style>
