@@ -1,47 +1,47 @@
 <script context="module" lang="ts">
-	import { enhance } from '$lib/utils/form';
-	import type { Load } from '@sveltejs/kit';
+	import { enhance } from '$lib/utils/form'
+	import type { Load } from '@sveltejs/kit'
 
 	// see https://kit.svelte.dev/docs#loading
 	export const load: Load = async ({ fetch }) => {
-		const res = await fetch('/todos.json');
+		const res = await fetch('/todos.json')
 
 		if (res.ok) {
-			const todos = await res.json();
+			const todos = await res.json()
 
 			return {
 				props: { todos }
-			};
+			}
 		}
 
-		const { message } = await res.json();
+		const { message } = await res.json()
 
 		return {
 			error: new Error(message)
-		};
-	};
+		}
+	}
 </script>
 
 <script lang="ts">
-	import { scale } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
+	import { scale } from 'svelte/transition'
+	import { flip } from 'svelte/animate'
 
 	type Todo = {
-		uid: string;
-		created_at: Date;
-		text: string;
-		done: boolean;
-	};
+		uid: string
+		created_at: Date
+		text: string
+		done: boolean
+	}
 
-	export let todos: Todo[];
+	export let todos: Todo[]
 
 	async function patch(res: Response) {
-		const todo = await res.json();
+		const todo = await res.json()
 
 		todos = todos.map((t) => {
-			if (t.uid === todo.uid) return todo;
-			return t;
-		});
+			if (t.uid === todo.uid) return todo
+			return t
+		})
 	}
 </script>
 
@@ -49,7 +49,9 @@
 	<title>Todos</title>
 </svelte:head>
 
+
 <div class="todos">
+	
 	<h1>Todos</h1>
 
 	<form
@@ -58,14 +60,14 @@
 		method="post"
 		use:enhance={{
 			result: async (res, form) => {
-				const created = await res.json();
-				todos = [...todos, created];
+				const created = await res.json()
+				todos = [...todos, created]
 
-				form.reset();
+				form.reset()
 			}
 		}}
 	>
-		<input name="text" aria-label="Add todo" placeholder="+ tap to add a todo" />
+		<input autocomplete="off" name="text" aria-label="Add todo" placeholder="+ tap to add a todo" />
 	</form>
 
 	{#each todos as todo (todo.uid)}
@@ -80,13 +82,16 @@
 				method="post"
 				use:enhance={{
 					pending: (data) => {
-						todo.done = !!data.get('done');
+						todo.done = !!data.get('done')
 					},
 					result: patch
 				}}
 			>
 				<input type="hidden" name="done" value={todo.done ? '' : 'true'} />
-				<button class="toggle" aria-label="Mark todo as {todo.done ? 'not done' : 'done'}" />
+				<button
+					class="toggle"
+					aria-label="Mark todo as {todo.done ? 'not done' : 'done'}"
+				/>
 			</form>
 
 			<form
@@ -106,7 +111,7 @@
 				method="post"
 				use:enhance={{
 					result: () => {
-						todos = todos.filter((t) => t.uid !== todo.uid);
+						todos = todos.filter((t) => t.uid !== todo.uid)
 					}
 				}}
 			>
@@ -115,6 +120,7 @@
 		</div>
 	{/each}
 </div>
+
 
 <style>
 	.todos {
@@ -130,11 +136,20 @@
 
 	input {
 		border: 1px solid transparent;
+		box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	input::placeholder {
+		font-family: var(--font-secondary);
+	}
+	input:focus::placeholder {
+		content: '';
+		visibility: none;
+		opacity: 0;
 	}
 
 	input:focus-visible {
-		box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
-		border: 1px solid #ff3e00 !important;
+		border: 1px solid var(--brand-a) !important;
 		outline: none;
 	}
 

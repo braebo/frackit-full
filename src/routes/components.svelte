@@ -23,9 +23,4 @@
 		display: grid;
 		justify-content: center;
 	}
-	.todo {
-		text-align: center;
-		margin: 5rem auto;
-		font-family: var(--font-secondary)
-	}
 </style>
