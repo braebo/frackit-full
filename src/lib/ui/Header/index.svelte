@@ -9,13 +9,13 @@
 
 	header
 
-		.corner
-			a(href='https://kit.svelte.dev')
+		#home.corner
+			a(href='https://kit.svelte.dev' target="_blank")
 				Logo
 
 		Nav
 
-		.corner
+		#theme.corner
 			Switch
 
 </template>

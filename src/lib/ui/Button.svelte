@@ -48,8 +48,7 @@
 	}
 	button:focus, button:active {
         box-shadow: 0 0 1.5px 1px var(--brand-a);
-	}
-	p {
-		height: 50%;
+		transform: scale(0.95);
+		transition: 0.1s
 	}
 </style>

@@ -1,37 +1,44 @@
 <!-- https://svelte.dev/repl/581f92c508bb4a2681e0939848733775?version=3.38.2 -->
 <script>
+	import { blur } from 'svelte/transition'
+	import { onMount } from 'svelte';
 	import theme from '$lib/theme'
+	
 	$: dark = $theme === 'dark' ? true : false
+	let delay = 1
+	
+	let mounted = false
+	onMount(() => mounted = true)
 </script>
 
 
-<template lang="pug">
+<template lang='pug'>
 
-	div(class:dark)
-
-		+key('dark')
-
-			svg(width="2048" height="495")
+		div(class:dark)
+			svg(width='2048' height='495')
 				filter#filter
 					feConvolveMatrix(
-						preserveAlpha="true"
-						divisor="3"
-						bias="-3.2"
-						order="3 3"
-						kernelMatrix="10 10 -1.8 -1 -1 -1 0 0 0"
+						kernelMatrix='10 10 -1.8 -1 -1 -1 0 0 0'
+						preserveAlpha='true'
+						divisor='3'
+						bias='-3.2'
+						order='3 3'
 					)
 				image(
 					class:dark
-					id="welcome"
-					href="/svelte-welcome.png"
-					width="100%"
-					height="100%"
+					id='welcome'
+					href='/svelte-welcome.png'
+					width='100%'
+					height='100%'
 				)
 
 </template>
 
 
 <style>
+	input {
+		pointer-events: fill;
+	}
 	svg {
 		position: absolute;
 
