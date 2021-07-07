@@ -31,12 +31,13 @@
 	})
 </script>
 
+<!-- svelte-ignore a11y-missing-attribute -->
 <template lang="pug">
 
 	+if('mounted')
 		nav(in:fly|once='{{y: $first ? -50 : 0, easing: quintOut, duration: 400, opacity: 1 }}')
 
-			img.navleft(src='{navleft}')
+			img.navleft(src='{navleft}' aria-hidden='true')
 
 			ul(class:expand='{$first}')
 
@@ -53,7 +54,7 @@
 						+if('path === $page.path')
 							.arrow(class:fade='{$first}' in:receive out:send)
 
-			img.navright(src='{navright}')
+			img.navright(src='{navright}' aria-hidden='true')
 
 </template>
 
@@ -73,10 +74,6 @@
 		height: 3em;
 	}
 
-	path {
-		fill: var(--background);
-	}
-
 	ul {
 		display: flex;
 		position: relative;
@@ -92,8 +89,6 @@
 		background-size: contain;
 
 		z-index: 1;
-
-		/* box-shadow: 0 -2px 2px #0005 inset; */
 	}
 	.expand {
 		max-width: 0%;
@@ -171,7 +166,7 @@
 		}
 	}
 
-	/* safari hack because it's trash */
+	/* hack for Safari because it's trash */
 	.navright,
 	.navleft {
 		position: relative;
