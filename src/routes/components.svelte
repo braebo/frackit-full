@@ -4,7 +4,6 @@
 	import Modal from '$lib/ui/Modal.svelte'
 </script>
 
-
 <template lang="pug">
 
 	section.modal
@@ -16,11 +15,11 @@
 
 </template>
 
-
 <style>
 	.modal {
-		margin-top: 5em;
 		display: grid;
 		justify-content: center;
+
+		margin-top: 5em;
 	}
 </style>

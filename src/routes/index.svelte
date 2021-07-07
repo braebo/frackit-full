@@ -8,7 +8,6 @@
 	import List from '$lib/ui/List.svelte'
 </script>
 
-
 <template lang="pug">
 
 	svelte:head
@@ -25,7 +24,6 @@
 
 </template>
 
-
 <style>
 	section {
 		display: flex;
@@ -34,7 +32,7 @@
 
 		justify-content: center;
 		align-items: center;
-		
+
 		z-index: 1;
 	}
 

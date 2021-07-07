@@ -4,7 +4,6 @@
 	import Nav from './Nav.svelte'
 </script>
 
-
 <template lang="pug">
 
 	header
@@ -20,13 +19,12 @@
 
 </template>
 
-
 <style>
 	header {
 		display: flex;
 		position: relative;
 		justify-content: space-between;
-		
+
 		width: 100vw;
 
 		z-index: 50;
