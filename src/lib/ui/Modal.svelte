@@ -4,11 +4,10 @@
 	import Button from '$lib/ui/Button.svelte'
 	import { fly } from 'svelte/transition'
 
-	export let title = "Title"
+	export let title = 'Title'
 
-	const hide = () => $showModal = false
+	const hide = () => ($showModal = false)
 </script>
-
 
 <template lang="pug">
 
@@ -46,7 +45,6 @@
 
 </template>
 
-
 <style>
 	.container {
 		position: absolute;
@@ -63,40 +61,46 @@
 		min-width: 300px;
 		max-width: min(90vw, 500px);
 		margin: 2em auto;
-		
+
 		background: var(--light-b);
-		box-shadow: 0 2px 10px 3px #0002;
+		box-shadow: 0 2px 10px 3px #00000022;
 		border-radius: 10px;
 
 		z-index: 200;
 	}
 	.title {
 		min-height: max-content;
+
 		line-height: 10px;
 		font-size: 1em;
 	}
 	.content {
-		border-bottom: 1px solid rgba(var(--dark-d-rgb), 0.1);
-		border-top: 1px solid rgba(var(--dark-d-rgb), 0.1);
 		line-height: 3em;
+
+		border-top: 1px solid rgba(var(--dark-d-rgb), 0.1);
+		border-bottom: 1px solid rgba(var(--dark-d-rgb), 0.1);
 	}
 	.buttons {
 		margin-left: auto;
 		width: max-content;
 	}
-	.content, .title, .buttons {
+	.content,
+	.title,
+	.buttons {
 		padding: 0 1em;
 	}
 	.x-icon {
 		position: absolute;
 		right: 0;
+
 		padding: 0.75em;
+
 		cursor: pointer;
-		
+
 		transition: transform 0.5s;
 	}
 	#x {
-		stroke: #bbb;
+		stroke: #bbbbbb;
 
 		transition: stroke 0.25s;
 	}

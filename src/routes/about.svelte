@@ -1,17 +1,16 @@
 <script>
-	import { fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition'
 
 	let pre, copied
 	function copy() {
-		navigator.clipboard.writeText("npm init @svelte/next").then(() => {
+		navigator.clipboard.writeText('npm init @svelte/next').then(() => {
 			copied = true
 			setTimeout(() => {
 				copied = false
 			}, 1500)
-		});
+		})
 	}
 </script>
-
 
 <template lang="pug">
 
@@ -45,7 +44,6 @@
 			| .
 </template>
 
-
 <style>
 	.content {
 		width: 100%;
@@ -53,19 +51,20 @@
 		margin: var(--column-margin-top) auto 0 auto;
 	}
 	.code {
-		color: var(--dark-a);
 		position: relative;
+
+		color: var(--dark-a);
 	}
 	pre {
 		position: relative;
-		background: var(--light-a);
-		
+
 		width: max-content;
 		margin: auto;
-		
+
 		border: 1px solid var(--brand-a);
-		box-shadow: 0px 2px 2px 2px #0001;
-		
+		background: var(--light-a);
+		box-shadow: 0px 2px 2px 2px #00000011;
+
 		cursor: pointer;
 	}
 	.copied {
@@ -75,8 +74,9 @@
 
 		width: max-content;
 		margin: auto;
-		
+
 		font-family: var(--font-secondary);
+
 		z-index: -1;
 	}
 </style>

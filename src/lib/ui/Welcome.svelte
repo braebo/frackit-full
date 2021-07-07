@@ -1,18 +1,17 @@
 <!-- https://svelte.dev/repl/581f92c508bb4a2681e0939848733775?version=3.38.2 -->
-<script>
+<script lang="ts">
 	import { blur } from 'svelte/transition'
-	import { onMount } from 'svelte';
+	import { onMount } from 'svelte'
 	import theme from '$lib/theme'
-	
+
 	$: dark = $theme === 'dark' ? true : false
 	let delay = 1
-	
+
 	let mounted = false
-	onMount(() => mounted = true)
+	onMount(() => (mounted = true))
 </script>
 
-
-<template lang='pug'>
+<template lang="pug">
 
 		div(class:dark)
 			svg(width='2048' height='495')
@@ -34,16 +33,11 @@
 
 </template>
 
-
 <style>
-	input {
-		pointer-events: fill;
-	}
 	svg {
 		position: absolute;
 
-		top: clamp(min(50px, 3vw), 50vw, 20%);  /* ¯\_(ツ)_/¯ */
-		transform: translateY(-30%);
+		top: clamp(min(50px, 3vw), 50vw, 20%); /* ¯\_(ツ)_/¯ */
 		right: 0;
 		left: 0;
 
@@ -53,16 +47,17 @@
 		margin: auto;
 
 		user-select: none;
+		transform: translateY(-30%);
 	}
 	div.dark {
-		-webkit-filter: hue-rotate(190deg) brightness(0.5) blur(0.1px);
+		filter: hue-rotate(190deg) brightness(0.5) blur(0.1px);
 		filter: hue-rotate(190deg) brightness(0.5) blur(0.5px);
 	}
 	div {
 		filter: hue-rotate(190deg);
 	}
 	image {
-		filter: none
+		filter: none;
 	}
 	image.dark {
 		filter: url(#filter);

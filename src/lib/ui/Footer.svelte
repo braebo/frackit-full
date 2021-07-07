@@ -1,12 +1,12 @@
-<script>
-	import { onMount } from 'svelte';
-	import { fly, scale } from 'svelte/transition';
-	
+<script lang="ts">
+	import { onMount } from 'svelte'
+	import { fly, scale } from 'svelte/transition'
+
 	let mounted = false
-	onMount(() => mounted = true)
+	onMount(() => (mounted = true))
 </script>
 
-<template lang='pug'>
+<template lang="pug">
 	
 	+if('mounted')
 		.footer(in:fly='{{y: 10, delay: 1500, duration: 750 }}')
@@ -31,15 +31,11 @@
 
 		margin-top: auto;
 	}
-
-	footer a {
-		font-weight: bold;
-		position: relative;
-	}
 	svg {
+		color: var(--dark-a);
+
 		transition: 0.3s;
 		transform: scale(1) translateY(-8px);
-		color: var(--dark-a);
 		fill: var(--dark-a);
 	}
 

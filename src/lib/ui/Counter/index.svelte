@@ -33,11 +33,10 @@
 		interval = null
 	}
 
-	let mounted = false;
-	onMount(() => mounted = true)
+	let mounted = false
+	onMount(() => (mounted = true))
 	onDestroy(release)
 </script>
-
 
 <template lang="pug">
 
@@ -77,13 +76,12 @@
 
 </template>
 
-
 <style>
 	.counter {
 		display: flex;
 
 		margin: 4rem 0;
-		
+
 		border-top: 1px solid rgba(var(--dark-d-rgb), 0.1);
 		border-bottom: 1px solid rgba(var(--dark-d-rgb), 0.1);
 		border-radius: 5px;
@@ -96,16 +94,18 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
+
 		width: 2em;
 		padding: 0;
-		
-		background-color: transparent;
+
+		font-size: 2rem;
+
 		color: var(--dark-c);
 		border: 1px solid rgba(var(--dark-d-rgb), 0.25);
 		border-radius: 5px;
-		
-		font-size: 2rem;
+
+		background-color: transparent;
+
 		cursor: pointer;
 
 		transition: 0.1s;
@@ -114,10 +114,10 @@
 	.counter button:hover {
 		border: 1px solid rgba(var(--dark-b-rgb), 0.35);
 	}
-	
+
 	.counter button:active {
-		box-shadow: 0 0 4px 3px #0001 inset;
-		background-color: #0aF1;
+		box-shadow: 0 0 4px 3px #00000011 inset;
+		background-color: #00aaff11;
 	}
 
 	svg {
@@ -133,31 +133,34 @@
 
 	.counter-viewport {
 		position: relative;
-		overflow: hidden;
-		
+
 		width: 8em;
 		height: 4em;
-		
+
+		overflow: hidden;
+
 		text-align: center;
 	}
 
 	.counter-viewport strong {
-		position: absolute;
 		display: flex;
-		justify-content: center;
+		position: absolute;
 		align-items: center;
-		
+		justify-content: center;
+
 		width: 100%;
 		height: 100%;
-		
-		color: var(--brand-a);
-		
-		font-weight: 400;
+
 		font-size: 4rem;
+
+		font-weight: 400;
+
+		color: var(--brand-a);
 	}
 
 	.counter-digits {
 		position: absolute;
+
 		width: 100%;
 		height: 100%;
 	}
