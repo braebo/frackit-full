@@ -14,6 +14,7 @@
 		['https://cssnano.co/', 'CSSNano'],
 		['https://stylelint.io/', 'Stylelint'],
 		['https://mdsvex.com/', 'MDSvex'],
+		['https://vercel.com/', 'Vercel'],
 		['https://pugjs.org/api/getting-started.html', 'Pug']
 	]
 
