@@ -2,10 +2,20 @@
 	import Header from '$lib/ui/Header/index.svelte'
 	import { showModal } from '$lib/stores/modal'
 	import Footer from '$lib/ui/Footer.svelte'
+	import { page } from '$app/stores'
 	import '../app.css'
+
+	const pageTitle = (path: string) => {
+		if (path === '/') return 'Home'
+		const title = path.split('/')[1]
+		return title.charAt(0).toUpperCase() + title.slice(1)
+	}
 </script>
 
 <template lang="pug">
+
+	svelte:head
+		title {pageTitle($page.path)} · Frackit
 
 	.overlay(class:active='{$showModal}')
 

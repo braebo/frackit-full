@@ -10,9 +10,6 @@
 
 <template lang="pug">
 
-	svelte:head
-		title Home
-
 	section
 		h1
 			.welcome
