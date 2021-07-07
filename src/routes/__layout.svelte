@@ -5,7 +5,6 @@
 	import '../app.css'
 </script>
 
-
 <template lang="pug">
 
 	.overlay(class:active='{$showModal}')
@@ -18,20 +17,16 @@
 
 </template>
 
-
 <style>
-	:global(html, body) {
+	:global(html),
+	:global(body) {
 		background-color: var(--light-a);
-	}
-	.header {
-		position: absolute;
-		z-index: 50;
 	}
 	.overlay {
 		position: fixed;
 		left: 0;
 		top: 0;
-		
+
 		width: 100vw;
 		height: 100vh;
 
