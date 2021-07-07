@@ -6,8 +6,8 @@ My personal [Sveltekit](https://kit.svelte.dev) starter template, powered by [`c
 
 ![img](./static/screenshot.jpg)
 
-<figure class="video_container">
-  <video width="100%" loop autoplay allowfullscreen="false" poster="./static/screenshot.jpg">
-    <source src="./static/demo.mp4" type="video/mp4">
-  </video>
-</figure>
+<p  align='center'>
+
+<img src='https://media.giphy.com/media/MhYvggwb7AoldeUYAO/giphy.gif' />
+
+</p>
