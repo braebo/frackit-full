@@ -2,6 +2,12 @@
 	"name": "frackit",
 	"version": "0.0.1",
 	"description": "Fractal's personal sveltekit starter template",
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"starter",
+		"template"
+	],
 	"type": "module",
 	"scripts": {
 		"dev": "svelte-kit dev",
