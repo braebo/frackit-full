@@ -30,14 +30,16 @@
 		width: 100vw;
 		height: 100vh;
 
-		background: #0000;
+		background: #00000000;
+
 		transition: background 0.25s;
 
 		pointer-events: none;
 		z-index: 100;
 	}
 	.overlay.active {
-		background: #0005;
+		background: #00000055;
+
 		pointer-events: fill;
 	}
 </style>

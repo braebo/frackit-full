@@ -1,5 +1,5 @@
 <!-- https://svelte.dev/repl/581f92c508bb4a2681e0939848733775?version=3.38.2 -->
-<script>
+<script lang="ts">
 	import { blur } from 'svelte/transition'
 	import { onMount } from 'svelte'
 	import theme from '$lib/theme'
