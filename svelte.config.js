@@ -4,7 +4,7 @@ import preprocess from 'svelte-preprocess'
 import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = {	
+const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	preprocess: [
 		preprocess({
@@ -19,8 +19,8 @@ const config = {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			force: true,
-			pages: ['*'],
+			onError: 'continue',
+			pages: ['*']
 		}
 	}
 }
