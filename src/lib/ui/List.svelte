@@ -46,7 +46,7 @@
 		flex-direction: column;
 		flex: 1;
 
-		margin-top: clamp(5em, 30%, 8em);
+		margin-top: clamp(5em, 30%, 12em);
 
 		font-size: 1.5em;
 	}

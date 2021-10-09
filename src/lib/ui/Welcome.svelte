@@ -44,10 +44,11 @@
 		width: 100%;
 		max-width: 1000px;
 
-		margin: auto;
+		margin: var(--column-margin-top) auto auto auto;
 
 		user-select: none;
-		transform: translateY(-30%);
+
+		transform: translateY(-33%);
 	}
 	div.dark {
 		filter: hue-rotate(190deg) brightness(0.5) blur(0.1px);

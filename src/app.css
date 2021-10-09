@@ -29,70 +29,81 @@
 	--font-primary: 'rubik', sans-serif;
 	--font-secondary: 'dosis', sans-serif;
 	--font-mono: 'mono', monospace;
-	--warn: #F88;
+	--warn: #FF8888;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }
 
 body {
-	transition: color 0.5s background 0.3s background-color 0.3s;
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--light-a);
+
 	background: linear-gradient(
 		180deg,
 		var(--light-c) -10%,
 		var(--light-b) 10.45%,
 		var(--light-a) 41.35%
 	);
+	background-color: var(--light-a);
+
+	transition: color 0.5s background 0.3s background-color 0.3s;
 }
 
-body::before {
-	content: '';
-	width: 80vw;
-	height: 100vh;
+body:before {
 	position: absolute;
 	top: 0;
 	left: 10vw;
-	z-index: -1;
+
+	width: 80vw;
+	height: 100vh;
+
+	opacity: 0.05;
 	background: radial-gradient(
 		50% 50% at 50% 50%,
 		var(--pure-white) 0%,
 		rgba(255, 255, 255, 0) 100%
 	);
-	opacity: 0.05;
+
+	content: '';
+	z-index: -1;
 }
 
 #svelte {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+
+	min-height: 100vh;
 }
 
 h1,
 h2 {
-	color: var(--dark-a, --heading-color);
 	
 	font-family: var(--font-primary);
+	font-weight: 500;
+
+	color: var(--dark-a, --heading-color);
+
 	letter-spacing: 1.2px;
 	word-spacing: 8px;
-	font-weight: 500;
 }
 
 p {
-	line-height: 1.5;
 	font-family: var(--font-primary);
-	color: var(--dark-a, --text-color);
-	font-weight: 200;
 	font-size: 1.2em;
+	font-weight: 200;
+	line-height: 1.5;
+
+	color: var(--dark-a, --text-color);
 }
 
 a {
-	color: var(--brand-a);
 	
 	font-family: var(--font-secondary);
-	text-decoration: none;
 	font-weight: 300;
+
+	color: var(--brand-a);
+
+	text-decoration: none;
 }
 
 a:hover {
@@ -100,8 +111,10 @@ a:hover {
 }
 
 h1 {
-	font-size: 2rem;
 	margin-bottom: 0 0 1em 0;
+
+	font-size: 2rem;
+
 	text-align: center;
 }
 
@@ -110,14 +123,17 @@ h2 {
 }
 
 pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
 	padding: 0.5em;
-	overflow-x: auto;
+
+	font-family: var(--font-mono);
+	font-size: 16px;
+
 	color: var(--text-color);
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.45);
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+
+	overflow-x: auto;
 }
 
 input,
