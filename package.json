@@ -41,7 +41,7 @@
 		"rehype-autolink-headings": "^5.1.0",
 		"rehype-slug": "^4.0.1",
 		"remark-abbr": "^1.4.1",
-		"remark-github": "^10.1.0",
+		"remark-github": "^11.1.1",
 		"stylefmt": "^6.0.3",
 		"stylelint": "^13.13.1",
 		"stylelint-config-idiomatic-order": "^8.1.0",
