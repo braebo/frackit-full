@@ -43,7 +43,7 @@
 		"remark-abbr": "^1.4.1",
 		"remark-github": "^10.1.0",
 		"stylefmt": "^6.0.3",
-		"stylelint": "^13.13.1",
+		"stylelint": "^14.5.2",
 		"stylelint-config-idiomatic-order": "^8.1.0",
 		"stylelint-order": "^4.1.0",
 		"stylelint-scss": "^3.20.1",
